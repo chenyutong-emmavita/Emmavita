@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>陈雨桐 Emma Vita | Creative Health Practitioner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F3ECDC;
+      --bg-soft:#FBF7EF;
+      --ink:#2F241C;
+      --muted:#7D6B5B;
+      --line:#D8CBB8;
+      --earth:#A67C52;
+      --deep:#1F1813;
+      --white:#FFFDF8;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Noto Serif SC', serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.85;
+      letter-spacing:.03em;
+    }
+    a{color:inherit;text-decoration:none;}
+    .nav{
+      position:fixed;top:0;left:0;width:100%;z-index:50;
+      padding:22px 6vw;display:flex;justify-content:space-between;align-items:center;
+      background:rgba(243,236,220,.82);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(216,203,184,.5);
+      font-family:'Noto Sans SC',sans-serif;font-size:13px;color:var(--muted);
+    }
+    .nav .brand{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);letter-spacing:.08em;}
+    .nav-links{display:flex;gap:26px;}
+    .nav-links a:hover{color:var(--earth);}
+    section{padding:110px 8vw;}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:8vw;padding-top:150px;}
+    .eyebrow{font-family:'Noto Sans SC',sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--earth);margin-bottom:26px;}
+    h1{font-family:'Cormorant Garamond','Noto Serif SC',serif;font-size:clamp(58px,8vw,126px);font-weight:300;line-height:.88;letter-spacing:.01em;}
+    h1 span{display:block;font-size:clamp(32px,4.8vw,70px);font-style:italic;color:var(--muted);margin-top:18px;}
+    .hero-sub{margin-top:42px;font-size:clamp(22px,2.3vw,36px);line-height:1.55;font-weight:300;max-width:720px;}
+    .hero-sub em{font-style:normal;color:var(--earth);}
+    .hero-meta{margin-top:48px;font-family:'Noto Sans SC',sans-serif;font-size:14px;color:var(--muted);display:grid;gap:10px;}
+    .hero-card{background:var(--deep);color:var(--bg);min-height:560px;padding:48px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+    .hero-card:before{content:"";position:absolute;inset:24px;border:1px solid rgba(243,236,220,.28);}
+    .hero-card p{position:relative;z-index:2;font-size:21px;line-height:1.8;font-weight:300;}
+    .hero-card .signature{position:relative;z-index:2;font-family:'Cormorant Garamond',serif;font-size:44px;font-style:italic;color:#D7C4AA;}
+    .btns{display:flex;gap:16px;margin-top:44px;flex-wrap:wrap;}
+    .btn{font-family:'Noto Sans SC',sans-serif;font-size:13px;border:1px solid var(--ink);padding:13px 22px;border-radius:999px;transition:.25s;}
+    .btn:hover{background:var(--ink);color:var(--bg);}
+    .btn.fill{background:var(--ink);color:var(--bg);}
+    .intro{background:var(--bg-soft);display:grid;grid-template-columns:.7fr 1.3fr;gap:9vw;}
+    .section-title{font-family:'Cormorant Garamond','Noto Serif SC',serif;font-size:clamp(42px,5vw,82px);font-weight:300;line-height:1.05;}
+    .cn-title{font-size:clamp(26px,3vw,42px);font-weight:300;line-height:1.45;margin-top:18px;}
+    .body-large{font-size:22px;line-height:1.9;font-weight:300;}
+    .body-text{font-size:17px;color:#45382E;line-height:2.05;}
+    .divider{height:1px;background:var(--line);margin:50px 0;}
+    .journey{display:grid;gap:34px;}
+    .journey-item{display:grid;grid-template-columns:120px 1fr;gap:50px;border-top:1px solid var(--line);padding-top:34px;}
+    .num{font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--earth);font-style:italic;}
+    .journey h3{font-size:28px;font-weight:400;margin-bottom:14px;}
+    .services{background:var(--deep);color:var(--bg);}
+    .services .section-title,.services .cn-title{color:var(--bg);}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(243,236,220,.25);margin-top:70px;}
+    .service{background:var(--deep);padding:46px 38px;min-height:360px;}
+    .service .tag{font-family:'Cormorant Garamond',serif;font-size:42px;color:#C9AA83;font-style:italic;margin-bottom:36px;}
+    .service h3{font-size:25px;font-weight:300;line-height:1.45;margin-bottom:24px;}
+    .service p{color:#D8CBB8;font-size:15px;line-height:2;}
+    .philosophy{background:var(--bg);}
+    .principles{margin-top:70px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;}
+    .principle{border-top:1px solid var(--line);padding-top:24px;}
+    .principle strong{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--earth);font-weight:300;}
+    .principle h3{font-size:18px;margin:18px 0 14px;font-weight:400;line-height:1.5;}
+    .principle p{font-size:14px;color:var(--muted);line-height:1.9;}
+    .research{background:var(--bg-soft);display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start;}
+    .research-list{display:grid;gap:22px;}
+    .research-item{border-bottom:1px solid var(--line);padding-bottom:22px;}
+    .research-item h3{font-size:21px;font-weight:400;margin-bottom:8px;}
+    .research-item p{font-size:15px;color:var(--muted);line-height:1.9;}
+    .contact{text-align:center;min-height:78vh;display:flex;flex-direction:column;justify-content:center;align-items:center;}
+    .contact h2{font-family:'Cormorant Garamond','Noto Serif SC',serif;font-size:clamp(52px,7vw,108px);font-weight:300;line-height:1;}
+    .contact p{margin-top:36px;font-size:21px;max-width:680px;color:var(--muted);}
+    .contact-info{margin-top:46px;font-family:'Noto Sans SC',sans-serif;display:grid;gap:12px;color:var(--ink);}
+    footer{padding:34px 8vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:13px;font-family:'Noto Sans SC',sans-serif;}
+    @media(max-width:900px){
+      .nav-links{display:none;}
+      .hero,.intro,.research{grid-template-columns:1fr;}
+      .hero-card{min-height:420px;}
+      .service-grid,.principles{grid-template-columns:1fr;}
+      .journey-item{grid-template-columns:1fr;gap:10px;}
+      section{padding:86px 6vw;}
+      footer{flex-direction:column;gap:10px;}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">Emma Vita</div>
+    <div class="nav-links">
+      <a href="#belief">我的信念</a>
+      <a href="#journey">我的来路</a>
+      <a href="#practice">实践</a>
+      <a href="#research">研究</a>
+      <a href="#contact">联系</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Creative Health · Embodied Practice · Relational Space</div>
+      <h1>陈雨桐<span>Emma Vita</span></h1>
+      <div class="hero-sub">
+        我关心的不是“如何治愈一个人”。<br>
+        而是一个空间、一段关系、一种表达，<br>
+        如何让人重新<em>感受到自己</em>。
+      </div>
+      <div class="hero-meta">
+        <span>艺术实践者 · Creative Health Practitioner · 研究者</span>
+        <span>戏剧影视表演本科 · 曼彻斯特大学教育管理硕士 · UCL MASc Creative Health</span>
+      </div>
+      <div class="btns">
+        <a class="btn fill" href="#contact">预约一次对话</a>
+        <a class="btn" href="#practice">了解我的实践</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p>艺术不是逃离现实。<br><br>它是一种重新进入现实的方式：进入身体，进入关系，进入那些我们很久没有认真倾听的感受。</p>
+      <div class="signature">Emma Vita</div>
+    </div>
+  </section>
+
+  <section class="intro" id="belief">
+    <div>
+      <div class="eyebrow">Belief</div>
+      <div class="section-title">What I Believe</div>
+      <div class="cn-title">疗愈不是修复，<br>而是重新建立关系。</div>
+    </div>
+    <div>
+      <p class="body-large">我越来越意识到，很多人并不是失去了表达能力，而是从未真正被允许感受。</p>
+      <div class="divider"></div>
+      <p class="body-text">在中国的成长语境里，“成就”常常被置于“感受”之上。我们学会了表现、控制、达成目标，却很少被邀请去诚实地体验自己的身体、情绪与关系。这是我走向 Creative Health 的起点。</p>
+      <br>
+      <p class="body-text">我不把艺术理解为装饰性的活动，也不把疗愈理解为对“问题个体”的修理。对我而言，艺术是一种创造空间的方式：它让那些难以被语言说明的经验，终于有了被看见、被承载、被重新理解的可能。</p>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="eyebrow">Journey</div>
+    <div class="section-title">How I Arrived Here</div>
+    <div class="cn-title">从剧场到教育，<br>再到 Creative Health。</div>
+    <div class="journey" style="margin-top:70px;">
+      <div class="journey-item">
+        <div class="num">01</div>
+        <div>
+          <h3>剧场让我理解：人不只活在语言里。</h3>
+          <p class="body-text">本科四年，我学习戏剧影视表演，也参与舞台监督与幕后工作。台前，我练习身体、声音与情感的表达；幕后，我观察灯光、道具、节奏、空间与人之间的关系。剧场让我明白：一个空间如何被构建，直接影响人在其中能否打开自己。</p>
+        </div>
+      </div>
+      <div class="journey-item">
+        <div class="num">02</div>
+        <div>
+          <h3>教育管理让我看见：个体的痛苦常常有系统来源。</h3>
+          <p class="body-text">在曼彻斯特大学学习教育管理期间，我开始从政策、组织文化、领导力与教育结构的角度理解人的发展。我逐渐意识到，很多焦虑、压抑与失衡，并不是个体“太脆弱”，而是长期成长环境所塑造出的生存方式。</p>
+        </div>
+      </div>
+      <div class="journey-item">
+        <div class="num">03</div>
+        <div>
+          <h3>Creative Health 给了我一种新的语言。</h3>
+          <p class="body-text">在 UCL MASc Creative Health 的学习中，我开始将艺术实践、心理健康、身体经验与社会关系放在同一个框架中理解。它让我确认：创意不是少数人的才华，而是每个人都可以使用的资源。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="practice">
+    <div class="eyebrow">Practice</div>
+    <div class="section-title">Creative Relational Practice</div>
+    <div class="cn-title">我不提供标准答案。<br>我创造一个可以感受、反思与连接的场域。</div>
+    <div class="service-grid">
+      <div class="service">
+        <div class="tag">01</div>
+        <h3>一对一<br>创意健康对话</h3>
+        <p>以 Creative Health 为框架，结合叙事、身体觉察与表达性艺术方法，在安全的关系空间中陪伴个人探索内在经验。不是分析，不是评判，而是共同看见。</p>
+      </div>
+      <div class="service">
+        <div class="tag">02</div>
+        <h3>OH 卡沙龙<br>意象探索</h3>
+        <p>通过图像语言绕过过度理性的防御，触及情绪、记忆与内在资源。适合小组形式，尤其关注人与人之间真实而温和的连接。</p>
+      </div>
+      <div class="service">
+        <div class="tag">03</div>
+        <h3>戏剧与身体<br>工作坊</h3>
+        <p>借用剧场中的角色、叙事、身体表达与空间练习，帮助参与者从不同视角重新理解自己的故事。艺术不是目的，而是通道。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <div class="eyebrow">Principles</div>
+    <div class="section-title">Five Principles</div>
+    <div class="cn-title">我的实践原则</div>
+    <div class="principles">
+      <div class="principle"><strong>一</strong><h3>身体是智慧的入口</h3><p>很多说不清的感受，身体已经知道。实践从重新信任身体开始。</p></div>
+      <div class="principle"><strong>二</strong><h3>疗愈发生在关系中</h3><p>不是技术本身改变人，而是一个人被真正看见的时刻。</p></div>
+      <div class="principle"><strong>三</strong><h3>文化语境不能被忽略</h3><p>中国人的家庭、教育与情感表达方式，需要被认真理解。</p></div>
+      <div class="principle"><strong>四</strong><h3>保持实验者姿态</h3><p>我不是大师，而是持续观察、学习、实践与修正的人。</p></div>
+      <div class="principle"><strong>五</strong><h3>个体与系统同时被看见</h3><p>一个人的焦虑，往往与他所在的环境、结构和关系有关。</p></div>
+    </div>
+  </section>
+
+  <section class="research" id="research">
+    <div>
+      <div class="eyebrow">Research & Writing</div>
+      <div class="section-title">Thinking with Practice</div>
+      <div class="cn-title">我把实践带入研究，<br>也把研究带回现实。</div>
+    </div>
+    <div class="research-list">
+      <div class="research-item"><h3>Embodied Wellbeing · 具身健康</h3><p>关注身体觉察、动作经验与情绪调节之间的关系。</p></div>
+      <div class="research-item"><h3>Creative Health in Chinese Context · 中国语境下的创意健康</h3><p>思考西方 Creative Health 框架如何被翻译、调整并扎根于中国文化经验。</p></div>
+      <div class="research-item"><h3>Education, System & Mental Health · 教育系统与心理健康</h3><p>从教育管理与组织文化视角，理解年轻人的心理压力与成长结构。</p></div>
+      <div class="research-item"><h3>Narrative, Identity & Relationship · 叙事、身份与关系</h3><p>探索人如何通过故事、角色与关系重新理解自己。</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="eyebrow">Begin</div>
+    <h2>如果你感到<br>某种共鸣</h2>
+    <p>也许这就是开始的信号。你可以写信给我，预约一次一对一对话、工作坊合作，或进行学术与实践交流。</p>
+    <div class="contact-info">
+      <a href="mailto:chenyutong.emmavita@gmail.com">chenyutong.emmavita@gmail.com</a>
+      <span>微信 WeChat · EmmaVitaaaaaa</span>
+      <span>一对一预约 · 工作坊合作 · 学术交流</span>
+    </div>
+  </section>
+
+  <footer>
+    <span>陈雨桐 · Emma Vita</span>
+    <span>© 2026 · Creative Health Practitioner · 艺术实践者 · 研究者</span>
+  </footer>
+</body>
+</html>
